@@ -9,4 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Event received
-        run: echo "Strawberries"
+        run: |
+          echo ${{ github.event.client_payload.sha }} &&
+            echo ${{ github.event.client_payload.ref }} &&
+            echo ${{ github.event.client_payload.pr }}
