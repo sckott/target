@@ -8,8 +8,10 @@ jobs:
   log:
     runs-on: ubuntu-latest
     steps:
-      - name: Event received
+      - name: Event info
         run: |
-          echo ${{ github.event.client_payload.sha }}
-          echo ${{ github.event.client_payload.ref }}
-          echo ${{ github.event.client_payload.pr }}
+          echo PROOF-API SHA: ${{ github.event.client_payload.sha }}
+          echo PROOF-API REF: ${{ github.event.client_payload.ref }}
+          echo PROOF-API PR No.: ${{ github.event.client_payload.pr }}
+      - name: Do something
+        run: echo "I'm doing something!!!"
